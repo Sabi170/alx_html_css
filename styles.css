@@ -14,6 +14,10 @@ main {
 }
 
 article {
+    background-color: #f0f4f8;
+    color: #333;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
     flex: 2;
     overflow-y: auto;
     padding: 10px;
