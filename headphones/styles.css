@@ -1,96 +1,180 @@
-/* Reset styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========== Reset =========== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+
+/* =========== Variables =========== */
+:root{
+  --accent: #FF6565;
+  --max-width: 1000px;
+  --text-light: #ffffff;
+  --nav-padding: 28px;
 }
 
-/* Variables */
-:root {
-    --main-color: #FF6565;
-    --text-color: #fff;
-    --max-width: 1000px;
+/* =========== Fonts =========== */
+/* local Spin Cycle - add file to /fonts/Spin-Cycle-OT.otf */
+@font-face{
+  font-family: "Spin Cycle OT";
+  src: url("fonts/SourceSansPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Base body styling */
-body {
-    font-family: 'Source Sans Pro', sans-serif;
-    background: url('images/headphones_hero_1.jpg') no repeat center center/cover;
-    color: var(--text-color);
+body{
+  font-family: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #000;
+  color: var(--text-light);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-/* Container */
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 20px;
+/* =========== Generic container =========== */
+.container{
+  max-width: var(--max-width);
+  margin-inline: auto;      /* centers horizontally */
+  padding-inline: 20px;
 }
 
-/* Header */
-.site header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0;
+/* =========== Header / hero (full-bleed background) =========== */
+.hero{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url("images/headphones_hero_1.jpg") center/cover no-repeat;
+  color: var(--text-light);
 }
 
-.logo {
-    height: 40px;
+/* overlay (optional) to improve contrast) */
+/* .hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.45));
+  pointer-events:none;
+} */
+
+/* =========== Nav (top-left logo, top-right links) =========== */
+.nav{
+  padding: var(--nav-padding) 0;
+}
+.nav__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  /* center nav contents up to max width */
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+.logo{ height:40px; display:block; }
+
+/* keep selectors generic and simple */
+.nav__links{
+  list-style:none;
+  display:flex;
+  gap:28px;
+  align-items:center;
 }
 
-.nav li {
-    margin-left: 20px;
+.nav__links a{
+  color: var(--text-light);
+  text-decoration:none;
+  font-weight:600;
+  transition: color .15s ease;
+}
+.nav__links a:hover,
+.nav__links a:active{
+  color: var(--accent);    /* hover color requirement */
 }
 
-.nav a {
-    text-decoration: none;
-    color: var(--text-color);
+/* =========== Hero inner area (controls text placement) =========== */
+/* .hero__inner stretches to take remaining height and centers vertically */
+.hero__inner{
+  flex:1;
+  display:flex;
+  align-items:center;    /* vertically center hero block */
 }
 
-.nav a:hover {
-    color: var(--main-color);
-}
-
-/* Hero Section */
 .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     text-align: center;
-    padding: 100px 20px;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+/* The hero content itself is narrower and aligned left on wide screens */
+.hero__content{
+  max-width: 560px;     /* control text column width */
+  /* align left visually on desktop */
+  margin-left: clamp(32px, 6vw, 80px); /* push content slightly right from left edge */
+  /* center text on mobile via media queries below */
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
+/* Heading with span to style part of the heading differently */
+.hero__content h1{
+  font-family: "Spin Cycle OT", "Source Sans Pro", sans-serif;
+  font-size: 64px;
+  line-height: 0.95;
+  font-weight:700;
+  margin-bottom: 18px;
+  color: var(--text-light);
 }
 
-.btn {
-    background-color: var(--main-color);
-    color: var(--text-color);
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 4px;
+/* colored span */
+.hero__content h1 span{
+  color: var(--accent);
+  display:inline-block;
 }
 
-.btn:hover{
-    opacity: 0.9;
+/* lead paragraph */
+.lead{
+  margin-bottom: 26px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.95);
 }
 
-/* Mobile */
-@media (max-width: 480px) {
-    .nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
+/* button */
+.btn{
+  display:inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 999px;
+  text-decoration:none;
+  font-weight:700;
+  transition: opacity .15s ease, transform .12s ease;
 }
-.nav li {
-    margin: 10px 0;
-
+.btn:hover,
+.btn:active{
+  opacity: 0.9; /* hover/active rule */
+  transform: translateY(-1px);
 }
 
-.hero h1 {
-    font-size: 1.8rem;
+/* =========== Responsive: tablet & mobile =========== */
+/* Tablet smaller screens: reduce sizes */
+@media (max-width: 1024px){
+  .hero__content h1 { font-size: 48px; }
+  .lead { font-size: 16px; }
+}
+
+/* Mobile breakpoint per requirement: switch at 480px or less */
+@media (max-width: 480px){
+  .nav__inner{ padding-inline: 14px; }
+  .nav__links{ gap: 18px; font-size: 15px; }
+
+  /* On small screens we center the hero content */
+  .hero__content{
+    margin-left: 0;
+    margin-inline: auto;
+    text-align: center;
+    padding-inline: 12px;
+  }
+
+  .hero__content h1 { font-size: 28px; }
+  .lead { font-size: 14px; }
+  .btn{ padding: 10px 20px; }
 }
