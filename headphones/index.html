@@ -1,37 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Headphones — Hero</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Headphones</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    </head>
 
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <body>
 
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="hero" role="banner">
-    <nav class="nav">
-      <div class="nav__inner">
-        <img class="logo" src="images/logo_headphones.png" alt="Brand logo">
-        <ul class="nav__links">
-          <li><a href="#">What we do</a></li>
-          <li><a href="#">Our results</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+        <header class="header" role="banner">
+            <div class="container">
+                <a class="logo" href="#">
+
+                    <img src="images/logo_headphones.png" alt="Headphones"  width="140" height="24">
+                </a>
+
+                <nav class="nav" aria-label="Primary">
+                    <ul>
+                        <li><a href="#what-we-do">What we do</a></li>
+                        <li><a href="#results">Our results</a></li>
+                        <li><a href="#contact">Contacts us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content">
+
+            <section class="hero" aria-labelledby="herot-title">
+                <div class="container hero-content">
+                    <h1 id="hero-title">Lorem ipsum dolor sit amet lorem ipsum</h1>
+                    <p class="subtitle">Lorem ipsum dolor sit amet lorem ipsum dolor sit</p>
+                    <a href="#contact" class="btn">Call to action</a>
+                    <p class="lead">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+
+                    <div class="stats" role="list">
+                        <div class="stat" role="listitem" aria-label="+2 percent, Lorem ipsum dolor">
+                            <span class="number">+2%</span>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+
+                        <div class="stat" role="listitem" aria-label="+2 percent, Lorem ipsum dolor">
+                            <span class="number">+2%</span>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+
+                        <div class="stat" role="listitem" aria-label="+2 percent, Lorem ipsum dolor">
+                            <span class="number">+2%</span>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+
+                        <div class="stat" role="listitem" aria-label="+2 percent, Lorem ipsum dolor">
+                            <span class="number">+2%</span>
+                            <p>Lorem ipsum dolor</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- What we do-->
+             <section id="what-we-do" class="what-we-do">
+  <div class="container">
+    <h2>What we do…</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+
+    <div class="services">
+      <article class="service">
+        <img src="images/sound.png" alt="Sound design" />
+        <h3>Lorem ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </article>
+
+      <article class="service">
+        <img src="images/video-editing.png" alt="Video editing" />
+        <h3>Lorem ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </article>
+
+      <article class="service">
+        <img src="images/musical-note.png" alt="Music production" />
+        <h3>Lorem ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </article>
+
+      <article class="service">
+        <img src="images/sound (1).png" alt="Hearing solutions" />
+        <h3>Lorem ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Our Results -->
+<section id="results" class="results">
+  <div class="container">
+    <h2>Our results speak for themselves</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="number">+2%</span>
+        <p>Lorem ipsum dolor</p>
       </div>
-    </nav>
 
-    <div class="hero__inner">
-      <div class="container">
-        <div class="hero__content">
-          <h1>Experience <span>Sound</span></h1>
-          <p class="lead">Get the best sound quality with our premium headphones. Designed for comfort, built for performance.</p>
-          <a class="btn" href="#">Call to Action</a>
-        </div>
+      <div class="stat">
+        <span class="number">+2%</span>
+        <p>Lorem ipsum dolor</p>
+      </div>
+
+      <div class="stat">
+        <span class="number">+2%</span>
+        <p>Lorem ipsum dolor</p>
+      </div>
+
+      <div class="stat">
+        <span class="number">+2%</span>
+        <p>Lorem ipsum dolor</p>
       </div>
     </div>
-  </header>
-</body>
+  </div>
+</section>
+
+
+<section id="contact">
+  <div class="container contact-content">
+    <h2>Contact Us</h2>
+    <form action="#" method="post" class="contact-form">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
+        </main>
+
+  <!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <img src="images/logo_headphones.png" alt="Headphones Logo" class="footer-logo">
+
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <p class="copyright">© Headphones 2025</p>
+  </div>
+</footer>
+
+    </body>
 </html>
