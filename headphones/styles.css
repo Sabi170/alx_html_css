@@ -269,43 +269,67 @@ a {
 }
 
 /* Footer */
-footer {
-  background: #000;
-  padding: 50px 20px;
-  text-align: center;
-  font-family: 'Source Sans Pro', sans-serif;
+.site-footer {
+  background: #071629;                /* matches the Figma dark */
+  padding: 40px 0;
+  color: #fff;
 }
 
-.footer-content {
+.site-footer .container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* top row: logo left, socials right */
+.footer-top {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 25px;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.footer-logo {
-  height: 40px;
+.footer-logo img {
+  height: 28px;                       /* adjust if your asset is different */
+  display: block;
 }
 
+/* socials: always horizontal */
 .socials {
   display: flex;
-  gap: 25px; /* space between icons */
+  align-items: center;
+  gap: 24px;
 }
 
 .socials a {
   color: #fff;
-  font-size: 1.5rem;
-  transition: color 0.3s;
+  font-size: 1.1rem;                  /* icon size */
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .2s ease, color .2s ease;
 }
 
-.socials a:hover {
-  color: #ff5a5f; /* hover accent */
+.socials a:hover { opacity: .8; }
+
+/* bottom row: centered & faded */
+.site-footer .copyright {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,.6);        /* faded effect */
 }
 
-.copyright {
-  color: rgba(255, 255, 255, 0.6); /* faded effect */
-  font-size: 0.9rem;
+/* ------- Responsive to match Figma ------- */
+/* Mobile: stack logo → icons → copyright (centered) */
+@media (max-width: 767px) {
+  .footer-top {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
+
 
 /* ========== TABLET (≥768px) ========== */
 @media (min-width: 768px) {
